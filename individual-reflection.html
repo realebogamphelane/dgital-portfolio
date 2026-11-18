@@ -1,0 +1,1089 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f2ec">
+    <meta name="description" content="A personal reflection on learning, self-awareness and professional growth by Realeboga Oduetse Mphelane.">
+    <title>Individual Reflection | Realeboga Mphelane</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --paper: #f5f2ec;
+            --white: #fffefa;
+            --sand: #e8e0d5;
+            --taupe: #b4a696;
+            --ink: #292925;
+            --muted: #77736b;
+            --line: #ded8ce;
+            --dark: #34332f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 48px));
+            margin: auto;
+        }
+
+        .top-note {
+            padding: 9px 15px;
+            background: var(--dark);
+            color: var(--paper);
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(245, 242, 236, 0.96);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        nav {
+            min-height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .brand {
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            flex-shrink: 0;
+        }
+
+        .brand span {
+            color: var(--taupe);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            font-weight: 600;
+            color: #625e57;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a[aria-current="page"] {
+            color: #9b846c;
+        }
+
+        .nav-links .contact-link {
+            padding: 10px 14px;
+            background: var(--dark);
+            color: var(--white);
+            border-radius: 4px;
+        }
+
+        .menu-toggle {
+            display: none;
+            padding: 8px 12px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .page-hero {
+            padding: 82px 0 72px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--taupe);
+        }
+
+        h1 {
+            margin-top: 24px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(48px, 6.5vw, 77px);
+            line-height: 1.06;
+            font-weight: 600;
+            letter-spacing: -4px;
+        }
+
+        h1 span {
+            color: #a4937e;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .hero-note {
+            padding: 32px;
+            background: var(--sand);
+            border-radius: 12px;
+        }
+
+        .hero-note small {
+            color: #8a7865;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        .hero-note blockquote {
+            margin-top: 20px;
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: -0.8px;
+        }
+
+        .hero-note p {
+            margin-top: 20px;
+            color: #6e675d;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .contents {
+            padding: 27px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .contents-inner {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px 25px;
+        }
+
+        .contents-label {
+            color: var(--muted);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .contents a {
+            color: #625e57;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .contents a:hover {
+            color: #9b846c;
+        }
+
+        .reflection-section {
+            padding: 83px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .reflection-layout {
+            display: grid;
+            grid-template-columns: 0.52fr 1.48fr;
+            gap: 75px;
+        }
+
+        .section-index {
+            color: #a18b73;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-aside h2 {
+            margin-top: 14px;
+            font-family: "Manrope", sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            line-height: 1.4;
+        }
+
+        .section-aside p {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .reflection-copy {
+            max-width: 720px;
+        }
+
+        .reflection-copy p {
+            margin-bottom: 19px;
+            color: #5f5b54;
+            font-size: 14px;
+            line-height: 2.05;
+        }
+
+        .reflection-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .reflection-copy strong {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .pull-quote {
+            margin: 30px 0;
+            padding: 25px 28px;
+            background: var(--white);
+            border-left: 3px solid var(--taupe);
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.7;
+            letter-spacing: -0.4px;
+        }
+
+        .growth-section {
+            padding: 85px 0;
+            background: #e9e2d8;
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 38px;
+        }
+
+        .section-heading h2 {
+            margin-top: 14px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(34px, 4.5vw, 51px);
+            font-weight: 600;
+            letter-spacing: -2px;
+            line-height: 1.2;
+        }
+
+        .section-heading p {
+            margin-top: 17px;
+            color: #6d655b;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .growth-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .growth-card {
+            padding: 28px;
+            background: rgba(255, 254, 250, 0.82);
+            border: 1px solid rgba(180, 166, 150, 0.3);
+            border-radius: 10px;
+        }
+
+        .growth-card small {
+            color: #9b846c;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .growth-card h3 {
+            margin-top: 13px;
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+            letter-spacing: -0.6px;
+        }
+
+        .growth-card p {
+            margin-top: 10px;
+            color: #6d675f;
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .goals-section {
+            padding: 85px 0;
+        }
+
+        .goals-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 65px;
+        }
+
+        .goals-intro h2 {
+            margin-top: 15px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.25;
+            letter-spacing: -2px;
+        }
+
+        .goals-intro p {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        .goal-list {
+            display: grid;
+            gap: 0;
+        }
+
+        .goal-item {
+            display: grid;
+            grid-template-columns: 43px 1fr;
+            gap: 18px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .goal-number {
+            color: #a18b73;
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .goal-item h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .goal-item p {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .closing-section {
+            padding: 68px 0;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .closing-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .closing-inner h2 {
+            max-width: 650px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(29px, 4vw, 43px);
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -1.5px;
+        }
+
+        .closing-inner h2 span {
+            color: #c5b39c;
+        }
+
+        .closing-inner p {
+            margin-top: 13px;
+            color: #c7c2b9;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .closing-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 19px;
+            background: #e8e0d5;
+            color: var(--dark);
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        footer {
+            padding: 24px 0;
+            background: #282824;
+            color: #c7c2b9;
+            font-size: 10px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer a {
+            color: var(--white);
+        }
+
+        :focus-visible {
+            outline: 2px solid #9d8973;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 11px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .hero-grid {
+                gap: 35px;
+            }
+
+            .reflection-layout {
+                gap: 35px;
+            }
+
+            .goals-layout {
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: calc(100% - 34px);
+            }
+
+            nav {
+                min-height: 70px;
+            }
+
+            .menu-toggle {
+                display: block;
+                padding: 8px 12px;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 5px;
+            }
+
+            .nav-links {
+                position: absolute;
+                display: none;
+                top: 69px;
+                left: 0;
+                right: 0;
+                padding: 12px 20px 20px;
+                background: var(--paper);
+                border-bottom: 1px solid var(--line);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 6px;
+                font-size: 12px;
+            }
+
+            .nav-links .contact-link {
+                margin-top: 8px;
+                text-align: center;
+            }
+
+            .page-hero {
+                padding: 55px 0;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: clamp(47px, 12vw, 68px);
+                letter-spacing: -3px;
+            }
+
+            .hero-note {
+                padding: 25px;
+            }
+
+            .hero-note blockquote {
+                font-size: 22px;
+            }
+
+            .reflection-section {
+                padding: 60px 0;
+            }
+
+            .reflection-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .section-aside h2 {
+                font-size: 25px;
+            }
+
+            .reflection-copy p {
+                font-size: 13px;
+            }
+
+            .pull-quote {
+                padding: 21px;
+                font-size: 18px;
+            }
+
+            .growth-section,
+            .goals-section {
+                padding: 65px 0;
+            }
+
+            .growth-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .growth-card {
+                padding: 23px;
+            }
+
+            .goals-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .closing-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .closing-section {
+                padding: 55px 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-note">
+        Personal Portfolio · Learning &amp; Development · 2026
+    </div>
+
+    <header>
+        <nav class="container" aria-label="Main navigation">
+            <a class="brand" href="index.html">RM<span>.</span></a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="navigation-links"
+            >
+                Menu
+            </button>
+
+            <ul class="nav-links" id="navigation-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="individual-reflection.html" aria-current="page">Reflection</a></li>
+                <li><a href="group-reflection.html">Group Work</a></li>
+                <li><a href="skills-projects.html">Skills</a></li>
+                <li><a href="application-letter.html">Application</a></li>
+                <li><a href="email-templates.html">Emails</a></li>
+                <li><a href="study-resources.html">Resources</a></li>
+                <li><a href="index.html#contact" class="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">Personal journal / 003</p>
+
+                    <h1>Learning<br><span>about myself.</span></h1>
+
+                    <p class="hero-description">
+                        Starting my journey in Business Intelligence and Data
+                        Analytics has given me an opportunity to think about
+                        who I am, what I want to achieve and the habits I need
+                        to develop. This reflection explores my learning,
+                        personal strengths, areas for improvement and the
+                        professional I hope to become.
+                    </p>
+                </div>
+
+                <aside class="hero-note">
+                    <small>A thought to carry forward</small>
+
+                    <blockquote>
+                        Growth begins when I am willing to learn from
+                        where I am today.
+                    </blockquote>
+
+                    <p>
+                        I do not expect to have everything figured out at the
+                        beginning of my journey. What matters is that I remain
+                        committed to improving.
+                    </p>
+                </aside>
+            </div>
+        </section>
+
+        <nav class="contents" aria-label="Reflection contents">
+            <div class="container contents-inner">
+                <span class="contents-label">In this reflection</span>
+                <a href="#beginning">My beginning</a>
+                <a href="#learning">What I'm learning</a>
+                <a href="#strengths">My strengths</a>
+                <a href="#challenges">Areas to improve</a>
+                <a href="#growth">Personal growth</a>
+                <a href="#future">Looking ahead</a>
+            </div>
+        </nav>
+
+        <section class="reflection-section" id="beginning">
+            <div class="container reflection-layout">
+                <aside class="section-aside">
+                    <span class="section-index">01 / THE START</span>
+                    <h2>A new chapter in my education.</h2>
+                    <p>
+                        Reflecting on where I am and what this stage
+                        of my journey means to me.
+                    </p>
+                </aside>
+
+                <div class="reflection-copy">
+                    <p>
+                        Beginning my studies in Business Intelligence and
+                        Data Analytics at Botswana School of Business Sciences
+                        represents an important step in my academic journey.
+                        As a first-year student, I understand that I am still
+                        building the foundation on which my future career
+                        will depend. I see this stage as an opportunity to
+                        explore new ideas, develop my abilities and become
+                        more confident in my potential.
+                    </p>
+
+                    <p>
+                        I would describe myself as focused, hardworking,
+                        friendly and determined to grow professionally.
+                        These qualities influence the way I approach my goals.
+                        I want to take my education seriously while remaining
+                        willing to learn from other people and from experiences
+                        that challenge me.
+                    </p>
+
+                    <p>
+                        Looking at my journey so far, I recognise that
+                        education is about more than passing assessments.
+                        It also involves developing discipline, learning
+                        how to manage responsibilities and understanding
+                        how my actions affect the people I work with.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="learning">
+            <div class="container reflection-layout">
+                <aside class="section-aside">
+                    <span class="section-index">02 / LEARNING</span>
+                    <h2>Connecting knowledge to real life.</h2>
+                    <p>
+                        Understanding why my programme matters beyond
+                        the classroom.
+                    </p>
+                </aside>
+
+                <div class="reflection-copy">
+                    <p>
+                        One of the reasons I am interested in Business
+                        Intelligence and Data Analytics is the connection
+                        between information and business decisions. I want
+                        to understand how organisations use information to
+                        identify problems, recognise opportunities and
+                        make informed choices.
+                    </p>
+
+                    <p>
+                        My academic interests include business and management,
+                        as well as the practical skills needed in the workplace.
+                        I recognise that developing in this field will require
+                        me to build my understanding gradually, practise what
+                        I learn and remain curious when I encounter unfamiliar
+                        concepts.
+                    </p>
+
+                    <p>
+                        I also understand the importance of transferable
+                        skills. Communication, teamwork, time management and
+                        the ability to organise information are valuable
+                        because professional work often involves collaborating
+                        with others and explaining ideas clearly.
+                    </p>
+
+                    <div class="pull-quote">
+                        I want to learn how to use knowledge, not simply
+                        memorise it.
+                    </div>
+
+                    <p>
+                        As I continue through my programme, I want to become
+                        more comfortable applying my knowledge to practical
+                        tasks. I believe that this will help me prepare for
+                        the responsibilities of an industrial attachment
+                        and, eventually, a career in business analysis or
+                        data analysis.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="strengths">
+            <div class="container reflection-layout">
+                <aside class="section-aside">
+                    <span class="section-index">03 / SELF-AWARENESS</span>
+                    <h2>Recognising what I bring.</h2>
+                    <p>
+                        Identifying the personal qualities I can continue
+                        to develop and put into practice.
+                    </p>
+                </aside>
+
+                <div class="reflection-copy">
+                    <p>
+                        I consider my determination and willingness to learn
+                        to be important strengths. When I set a goal, I want
+                        to give myself the opportunity to work towards it
+                        consistently. I also value being friendly and reliable
+                        because I believe that positive relationships and
+                        mutual respect contribute to a better learning
+                        environment.
+                    </p>
+
+                    <p>
+                        My previous leadership roles as a Minister of Justice
+                        and a class representative are relevant to the way
+                        I think about responsibility. These roles form part
+                        of my background and remind me of the importance
+                        of representing others appropriately, communicating
+                        clearly and taking responsibilities seriously.
+                    </p>
+
+                    <p>
+                        I want to build on these qualities throughout my
+                        studies. Being a good student and future professional
+                        requires more than confidence in my strengths; it
+                        also requires me to recognise when I need help,
+                        accept constructive feedback and remain open to
+                        different points of view.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="challenges">
+            <div class="container reflection-layout">
+                <aside class="section-aside">
+                    <span class="section-index">04 / IMPROVEMENT</span>
+                    <h2>Being honest about my development.</h2>
+                    <p>
+                        Growth requires me to recognise skills that
+                        still need attention.
+                    </p>
+                </aside>
+
+                <div class="reflection-copy">
+                    <p>
+                        As a first-year student, I know that there is still
+                        a great deal for me to learn. I am at the beginning
+                        of my professional journey, so I need to keep
+                        strengthening my academic knowledge and becoming
+                        more familiar with the expectations of the workplace.
+                    </p>
+
+                    <p>
+                        One area I want to keep developing is my practical
+                        ability to work with information and digital tools.
+                        Knowing that Microsoft Word, Excel and PowerPoint
+                        are relevant to my programme is only a starting point.
+                        I want to become more capable of using these tools
+                        appropriately for academic tasks and, in time,
+                        professional responsibilities.
+                    </p>
+
+                    <p>
+                        I also want to continue improving my time management,
+                        communication and confidence when approaching
+                        unfamiliar tasks. Rather than viewing improvement
+                        as a sign of weakness, I want to see it as a normal
+                        part of learning.
+                    </p>
+
+                    <p>
+                        My approach is to take my responsibilities seriously,
+                        ask questions when I do not understand something,
+                        practise consistently and use feedback to identify
+                        what I can do better. These are habits I can develop
+                        as I progress through my studies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="growth-section" id="growth">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Turning reflection into action</p>
+                    <h2>The person I'm working to become.</h2>
+                    <p>
+                        Reflection becomes more useful when it helps me
+                        decide what to keep doing and what to improve.
+                        These are the areas I want to focus on throughout
+                        my academic journey.
+                    </p>
+                </div>
+
+                <div class="growth-grid">
+                    <article class="growth-card">
+                        <small>01 / Academic development</small>
+                        <h3>Learn with intention</h3>
+                        <p>
+                            I want to approach my coursework with curiosity,
+                            build my understanding of key concepts and
+                            practise applying what I learn.
+                        </p>
+                    </article>
+
+                    <article class="growth-card">
+                        <small>02 / Professional skills</small>
+                        <h3>Become workplace-ready</h3>
+                        <p>
+                            I aim to strengthen my communication, teamwork,
+                            organisation and ability to use digital tools
+                            for meaningful tasks.
+                        </p>
+                    </article>
+
+                    <article class="growth-card">
+                        <small>03 / Personal responsibility</small>
+                        <h3>Build consistent habits</h3>
+                        <p>
+                            I want to manage my time more deliberately,
+                            take responsibility for my commitments and
+                            remain dependable when working with others.
+                        </p>
+                    </article>
+
+                    <article class="growth-card">
+                        <small>04 / Self-development</small>
+                        <h3>Stay open to feedback</h3>
+                        <p>
+                            I want to recognise mistakes as opportunities
+                            to improve and learn from people with different
+                            knowledge and experiences.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="goals-section" id="future">
+            <div class="container goals-layout">
+                <div class="goals-intro">
+                    <p class="eyebrow">The road ahead</p>
+                    <h2>My future is something I can prepare for.</h2>
+                    <p>
+                        I know that building a successful career will take
+                        time, commitment and practical experience. I want
+                        to use my time as a student to prepare myself for
+                        opportunities rather than wait until graduation
+                        to begin thinking about my future.
+                    </p>
+                </div>
+
+                <div class="goal-list">
+                    <article class="goal-item">
+                        <span class="goal-number">01</span>
+                        <div>
+                            <h3>Complete my qualification</h3>
+                            <p>
+                                Continue developing my knowledge and work
+                                towards completing my Business Intelligence
+                                and Data Analytics studies.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="goal-item">
+                        <span class="goal-number">02</span>
+                        <div>
+                            <h3>Gain industrial attachment experience</h3>
+                            <p>
+                                Seek opportunities to observe professional
+                                practice, apply my developing skills and
+                                learn from experienced people.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="goal-item">
+                        <span class="goal-number">03</span>
+                        <div>
+                            <h3>Explore business and data analysis</h3>
+                            <p>
+                                Develop the skills and understanding needed
+                                to work towards opportunities in my areas
+                                of career interest.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="goal-item">
+                        <span class="goal-number">04</span>
+                        <div>
+                            <h3>Contribute professionally in Botswana</h3>
+                            <p>
+                                Build a career where I can continue learning,
+                                take responsibility and contribute positively
+                                to an organisation.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="closing-section">
+            <div class="container closing-inner">
+                <div>
+                    <h2>
+                        I am still learning, still developing and
+                        <span>still becoming.</span>
+                    </h2>
+                    <p>
+                        My journey is in progress, and I intend to make
+                        the most of every opportunity to grow.
+                    </p>
+                </div>
+
+                <a class="closing-link" href="group-reflection.html">
+                    Continue to group reflection
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>© 2026 Realeboga Oduetse Mphelane</span>
+            <span>Individual Reflection · Learning &amp; Development</span>
+            <a href="index.html">Return home</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector(".nav-links");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = navigation.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.textContent = isOpen ? "Close" : "Menu";
+        });
+
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.textContent = "Menu";
+            });
+        });
+    </script>
+
+</body>
+</html>
