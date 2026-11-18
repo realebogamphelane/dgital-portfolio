@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study resources, learning strategies and academic development plan for Realeboga Oduetse Mphelane.">
+  <title>Study Resources | Realeboga Mphelane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f8f6f1;
+      --white: #ffffff;
+      --ink: #282823;
+      --muted: #77756e;
+      --line: #e7e2d9;
+      --sand: #e9e0d2;
+      --taupe: #a28f78;
+      --soft: #f0ece4;
+      --dark: #252520;
+      --radius: 20px;
+      --shadow: 0 12px 35px rgba(40, 40, 35, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .announcement {
+      background: var(--dark);
+      color: #f6f3ed;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 0.72rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 246, 241, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 17px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--taupe);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .nav-links a {
+      font-size: 0.76rem;
+      color: var(--muted);
+      padding: 9px 11px;
+      border-radius: 30px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      background: var(--sand);
+      color: var(--ink);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: 10px;
+      padding: 9px 13px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .container {
+      max-width: 1080px;
+      width: calc(100% - 48px);
+      margin: auto;
+    }
+
+    .hero {
+      padding: 88px 0 70px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(233, 224, 210, 0.7), transparent 35%),
+        var(--paper);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--taupe);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      max-width: 800px;
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      letter-spacing: -3px;
+      font-weight: 800;
+      margin-bottom: 23px;
+    }
+
+    h1 em {
+      color: var(--taupe);
+      font-style: normal;
+    }
+
+    .hero p {
+      max-width: 670px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 29px;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.65);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      color: #5e5b53;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -1.4px;
+      margin-bottom: 9px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 0.94rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 29px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 245px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 17px 38px rgba(40, 40, 35, 0.09);
+    }
+
+    .card-number {
+      color: var(--taupe);
+      font-size: 0.73rem;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    .resource-card h3 {
+      font-size: 1.22rem;
+      margin-bottom: 11px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .resource-link {
+      margin-top: auto;
+      color: #806d56;
+      font-weight: 700;
+      font-size: 0.84rem;
+      border-bottom: 1px solid #c8b9a4;
+      padding-bottom: 3px;
+    }
+
+    .resource-link:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .soft-section {
+      background: var(--soft);
+    }
+
+    .study-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .study-intro {
+      position: sticky;
+      top: 115px;
+    }
+
+    .study-intro h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .study-intro p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .quote {
+      border-left: 3px solid var(--taupe);
+      padding: 14px 0 14px 18px;
+      color: #62594d;
+      font-family: "Manrope", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .habit-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .habit {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 17px;
+      padding: 21px;
+      border-radius: 16px;
+      border: 1px solid #dfd8cc;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .habit-number {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--sand);
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      color: #695b49;
+    }
+
+    .habit h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .habit p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .plan-section {
+      background: var(--white);
+    }
+
+    .plan-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 570px;
+    }
+
+    .plan-table th,
+    .plan-table td {
+      text-align: left;
+      padding: 19px 22px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+      vertical-align: top;
+    }
+
+    .plan-table th {
+      background: var(--soft);
+      color: #5c554b;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .plan-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .plan-table td:first-child {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .integrity-box {
+      background: var(--dark);
+      color: #f8f6f1;
+      border-radius: var(--radius);
+      padding: 35px;
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .integrity-box h3 {
+      font-size: 1.55rem;
+      letter-spacing: -0.7px;
+    }
+
+    .integrity-box p,
+    .integrity-box li {
+      color: #d0cdc5;
+      font-size: 0.9rem;
+    }
+
+    .integrity-box ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .closing {
+      text-align: center;
+      padding: 78px 24px 88px;
+    }
+
+    .closing h2 {
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      letter-spacing: -1.8px;
+      max-width: 750px;
+      margin: 0 auto 18px;
+    }
+
+    .closing p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #f6f3ed;
+      padding: 36px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-brand {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -1px;
+    }
+
+    .footer-brand span {
+      color: #c5b29a;
+    }
+
+    footer p {
+      color: #c7c4bc;
+      font-size: 0.78rem;
+    }
+
+    .back-top {
+      color: #f6f3ed;
+      font-size: 0.8rem;
+      border-bottom: 1px solid #827d72;
+      padding-bottom: 3px;
+    }
+
+    @media (max-width: 920px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 10px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 13px;
+      }
+
+      .study-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .study-intro {
+        position: static;
+      }
+
+      .integrity-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: calc(100% - 34px);
+      }
+
+      .nav-inner {
+        padding: 14px 17px;
+      }
+
+      .hero {
+        padding: 65px 0 55px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-card {
+        padding: 24px;
+      }
+
+      .integrity-box {
+        padding: 26px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      .announcement,
+      .navbar,
+      footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .hero,
+      section,
+      .soft-section,
+      .plan-section {
+        padding: 28px 0;
+        background: white;
+      }
+
+      .resource-card,
+      .habit,
+      .integrity-box {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .integrity-box {
+        background: white;
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+
+      .integrity-box p,
+      .integrity-box li {
+        color: var(--muted);
+      }
+
+      .resource-link {
+        color: var(--ink);
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="announcement">
+    Business Intelligence &amp; Data Analytics · Academic Portfolio · 2026
+  </div>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Realeboga Mphelane home">RM<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">
+        Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="individual-reflection.html">Individual Reflection</a>
+        <a href="group-reflection.html">Group Reflection</a>
+        <a href="skills-projects.html">Skills &amp; Projects</a>
+        <a href="application-letter.html">Application Letter</a>
+        <a href="email-templates.html">Email Templates</a>
+        <a href="study-resources.html" aria-current="page">Study Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">08 / 08 — Learning &amp; Development</span>
+        <h1>Learning today.<br><em>Building tomorrow.</em></h1>
+        <p>
+          My study resources and learning plan reflect my commitment to developing
+          strong academic habits, improving my digital skills and preparing for a
+          future career as a Business Analyst. This page brings together the tools,
+          habits and principles that can support my growth as a first-year student.
+        </p>
+
+        <div class="hero-meta">
+          <span class="pill">Realeboga Oduetse Mphelane</span>
+          <span class="pill">Year 1 · Semester 1</span>
+          <span class="pill">2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">My Learning Toolkit</span>
+            <h2>Resources that move me forward.</h2>
+            <p>
+              These resources can help me strengthen my academic foundation,
+              practise digital tools and explore the skills required in business
+              analysis. I will use them alongside my prescribed course materials.
+            </p>
+          </div>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card">
+            <span class="card-number">RESOURCE 01</span>
+            <h3>Course Notes &amp; Lecturer Materials</h3>
+            <p>
+              My lecture notes, prescribed readings, assignment briefs and
+              lecturer-provided materials are my first point of reference. I can
+              use them to identify key concepts and prepare for assessments.
+            </p>
+            <a class="resource-link" href="https://www.bac.ac.bw/" target="_blank" rel="noopener noreferrer">
+              Visit the BAC website
+            </a>
+          </article>
+
+          <article class="resource-card">
+            <span class="card-number">RESOURCE 02</span>
+            <h3>Microsoft Office Skills</h3>
+            <p>
+              Microsoft Word, Excel and PowerPoint are useful for preparing
+              assignments, organising information, analysing data and presenting
+              findings professionally.
+            </p>
+            <a class="resource-link" href="https://support.microsoft.com/" target="_blank" rel="noopener noreferrer">
+              Explore Microsoft Support
+            </a>
+          </article>
+
+          <article class="resource-card">
+            <span class="card-number">RESOURCE 03</span>
+            <h3>Digital &amp; Technical Learning</h3>
+            <p>
+              As I progress in Business Intelligence and Data Analytics, I can
+              explore structured tutorials to build my understanding of digital
+              tools, data concepts and technology.
+            </p>
+            <a class="resource-link" href="https://learn.microsoft.com/" target="_blank" rel="noopener noreferrer">
+              Explore Microsoft Learn
+            </a>
+          </article>
+
+          <article class="resource-card">
+            <span class="card-number">RESOURCE 04</span>
+            <h3>Independent Study &amp; Practice</h3>
+            <p>
+              Additional explanations, practice exercises and guided lessons can
+              help me revisit difficult topics and strengthen my understanding
+              at my own pace.
+            </p>
+            <a class="resource-link" href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">
+              Explore Khan Academy
+            </a>
+          </article>
+
+          <article class="resource-card">
+            <span class="card-number">RESOURCE 05</span>
+            <h3>Library &amp; Academic Reading</h3>
+            <p>
+              Books, academic articles and library resources can help me develop
+              research skills, understand business concepts and support my
+              assignments with credible evidence.
+            </p>
+            <a class="resource-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">
+              Search Google Scholar
+            </a>
+          </article>
+
+          <article class="resource-card">
+            <span class="card-number">RESOURCE 06</span>
+            <h3>Career Exploration</h3>
+            <p>
+              Exploring business analyst responsibilities, workplace expectations
+              and industry skills can help me connect what I learn in class to
+              my future career goals.
+            </p>
+            <a class="resource-link" href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">
+              Explore online courses
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="habits">
+      <div class="container">
+        <div class="study-layout">
+          <div class="study-intro">
+            <span class="eyebrow">My Approach</span>
+            <h2>Small habits.<br>Consistent progress.</h2>
+            <p>
+              I understand that academic success is not only about studying
+              before an examination. It also depends on how consistently I
+              organise my time, participate in learning and take responsibility
+              for my development.
+            </p>
+            <div class="quote">
+              My goal is to become a student who understands what I learn and
+              knows how to apply it.
+            </div>
+          </div>
+
+          <div class="habit-list">
+            <article class="habit">
+              <div class="habit-number">01</div>
+              <div>
+                <h3>Plan my week</h3>
+                <p>
+                  I will list lectures, assignment deadlines and revision sessions
+                  at the beginning of each week so that I can manage my time
+                  responsibly.
+                </p>
+              </div>
+            </article>
+
+            <article class="habit">
+              <div class="habit-number">02</div>
+              <div>
+                <h3>Review my notes</h3>
+                <p>
+                  I will revisit lecture notes regularly, summarise important
+                  ideas in my own words and identify topics that need more
+                  attention.
+                </p>
+              </div>
+            </article>
+
+            <article class="habit">
+              <div class="habit-number">03</div>
+              <div>
+                <h3>Practise practical skills</h3>
+                <p>
+                  I will set aside time to practise Word, Excel and PowerPoint,
+                  gradually developing confidence with the tools used in
+                  academic and professional environments.
+                </p>
+              </div>
+            </article>
+
+            <article class="habit">
+              <div class="habit-number">04</div>
+              <div>
+                <h3>Ask questions and collaborate</h3>
+                <p>
+                  When I do not understand something, I will seek clarification
+                  from lecturers or classmates and participate constructively
+                  in group learning.
+                </p>
+              </div>
+            </article>
+
+            <article class="habit">
+              <div class="habit-number">05</div>
+              <div>
+                <h3>Reflect and improve</h3>
+                <p>
+                  I will review feedback on my work, recognise where I can improve
+                  and use each assessment as an opportunity to develop stronger
+                  learning habits.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plan-section" id="study-plan">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Personal Development</span>
+            <h2>My weekly study framework.</h2>
+            <p>
+              This is a flexible framework I can adapt around my lecture timetable,
+              assignment deadlines and other responsibilities.
+            </p>
+          </div>
+        </div>
+
+        <div class="plan-table-wrap">
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th>Focus Area</th>
+                <th>Planned Activity</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>After lectures</td>
+                <td>Review notes and organise class materials.</td>
+                <td>Improve understanding and retain key information.</td>
+              </tr>
+              <tr>
+                <td>During the week</td>
+                <td>Complete readings and practise difficult topics.</td>
+                <td>Build knowledge steadily instead of rushing at the last minute.</td>
+              </tr>
+              <tr>
+                <td>Practical learning</td>
+                <td>Practise Office applications and relevant digital skills.</td>
+                <td>Develop useful, transferable technical abilities.</td>
+              </tr>
+              <tr>
+                <td>Group work</td>
+                <td>Contribute ideas, communicate and meet agreed deadlines.</td>
+                <td>Strengthen teamwork and professional communication.</td>
+              </tr>
+              <tr>
+                <td>End of the week</td>
+                <td>Check progress, organise upcoming tasks and set priorities.</td>
+                <td>Stay organised and identify areas that need improvement.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="integrity-box">
+          <div>
+            <span class="eyebrow">Academic Responsibility</span>
+            <h3>Learn with honesty. Submit with confidence.</h3>
+          </div>
+          <div>
+            <p style="margin-bottom: 15px;">
+              I recognise that responsible academic work requires honesty,
+              independent thinking and respect for the ideas of others. As I
+              develop my academic skills, I will aim to:
+            </p>
+            <ul>
+              <li>Use credible sources and check the reliability of information.</li>
+              <li>Acknowledge sources and follow the referencing style required by my lecturers.</li>
+              <li>Explain ideas in my own words and distinguish them from direct quotations.</li>
+              <li>Follow institutional rules for collaboration and the use of digital or AI tools.</li>
+              <li>Ask for guidance when assignment instructions or referencing requirements are unclear.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <span class="eyebrow">Looking Ahead</span>
+      <h2>Every skill I develop is an investment in my future.</h2>
+      <p>
+        As I continue my studies, I want to build a strong foundation in business,
+        data and professional communication. By staying curious, practising
+        consistently and learning from feedback, I can prepare myself for
+        industrial attachment and a future career as a Business Analyst.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">RM<span>.</span></div>
+      <p>Realeboga Oduetse Mphelane · Academic Portfolio · 2026</p>
+      <a class="back-top" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Close" : "Menu";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu";
+      });
+    });
+  </script>
+</body>
+</html>
