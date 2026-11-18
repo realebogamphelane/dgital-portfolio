@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Realeboga Oduetse Mphelane's skills, academic development and career interests.">
+  <title>Skills & Projects | Realeboga Mphelane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f5f2ec;
+      --white: #fffefa;
+      --sand: #e8e0d5;
+      --taupe: #b4a696;
+      --ink: #292925;
+      --muted: #77736b;
+      --line: #ded8ce;
+      --dark: #34332f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .announcement {
+      background: var(--dark);
+      color: var(--paper);
+      padding: 9px 6%;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: rgba(255, 254, 250, 0.97);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1250px;
+      min-height: 82px;
+      margin: auto;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      font-family: 'Manrope', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--taupe);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--ink);
+    }
+
+    .nav-links a[aria-current="page"] {
+      border-bottom: 2px solid var(--taupe);
+      padding-bottom: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      padding: 9px 13px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 5% 90px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.2;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: end;
+      gap: 45px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      max-width: 750px;
+      margin: 15px 0 20px;
+      font-size: clamp(40px, 6vw, 72px);
+      letter-spacing: -3.5px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      color: #998b7b;
+    }
+
+    .hero-copy {
+      max-width: 630px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-card {
+      background: var(--dark);
+      color: var(--white);
+      padding: 27px;
+    }
+
+    .hero-card .eyebrow {
+      color: #c8c2b8;
+    }
+
+    .hero-card h2 {
+      margin: 14px 0;
+      font-size: 25px;
+      letter-spacing: -1px;
+    }
+
+    .hero-card p:last-child {
+      color: #d0cbc2;
+      font-size: 12px;
+    }
+
+    .section {
+      margin-top: 65px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 27px;
+    }
+
+    .section-heading h2 {
+      margin-top: 10px;
+      font-size: clamp(27px, 4vw, 39px);
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading > p {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 25px;
+      min-height: 220px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(41, 41, 37, 0.06);
+    }
+
+    .skill-index {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid var(--taupe);
+      color: var(--muted);
+      font-family: 'Manrope', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .software-section {
+      background: var(--sand);
+      padding: 38px;
+    }
+
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .software-item {
+      padding: 20px;
+      background: rgba(255, 254, 250, 0.75);
+      border: 1px solid rgba(180, 166, 150, 0.45);
+    }
+
+    .software-item h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .software-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .development {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .development-intro h2 {
+      margin: 12px 0 17px;
+      font-size: clamp(29px, 4vw, 40px);
+      letter-spacing: -1.5px;
+    }
+
+    .development-intro p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .development-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .development-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 17px;
+      padding: 21px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .development-item:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .development-number {
+      color: #998b7b;
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .development-item h3 {
+      margin-bottom: 7px;
+      font-size: 16px;
+    }
+
+    .development-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .projects-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 35px;
+    }
+
+    .projects-panel h2 {
+      margin: 10px 0 15px;
+      font-size: clamp(26px, 4vw, 37px);
+      letter-spacing: -1.3px;
+    }
+
+    .projects-panel > p {
+      max-width: 740px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .project-placeholder {
+      display: grid;
+      grid-template-columns: 0.25fr 1fr;
+      gap: 20px;
+      align-items: start;
+      margin-top: 27px;
+      padding: 23px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .project-placeholder .project-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .project-placeholder h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .project-placeholder p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .career-panel {
+      margin-top: 65px;
+      padding: 38px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .career-panel .eyebrow {
+      color: #c8c2b8;
+    }
+
+    .career-panel h2 {
+      max-width: 650px;
+      margin: 12px 0 15px;
+      font-size: clamp(28px, 4vw, 41px);
+      letter-spacing: -1.5px;
+    }
+
+    .career-panel > p {
+      max-width: 760px;
+      color: #d0cbc2;
+      font-size: 13px;
+    }
+
+    .career-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .career-column {
+      padding-top: 18px;
+      border-top: 1px solid #615e56;
+    }
+
+    .career-column h3 {
+      margin-bottom: 9px;
+      font-size: 17px;
+    }
+
+    .career-column p {
+      color: #d0cbc2;
+      font-size: 12px;
+    }
+
+    .page-navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 60px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+    }
+
+    .page-navigation a {
+      display: inline-block;
+      border: 1px solid var(--line);
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .page-navigation a:hover {
+      background: var(--sand);
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--paper);
+      padding: 30px 5%;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer p {
+      color: #c8c2b8;
+      font-size: 11px;
+    }
+
+    @media (max-width: 950px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 15px 0 5px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 500px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .development {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-top: 40px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .skills-grid,
+      .software-grid,
+      .career-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .software-section,
+      .projects-panel,
+      .career-panel {
+        padding: 24px;
+      }
+
+      .project-placeholder {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .page-navigation a {
+        padding: 10px 12px;
+      }
+    }
+
+    @media print {
+      header, .announcement, .page-navigation, footer, .menu-toggle {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      main {
+        max-width: 100%;
+        padding: 15px;
+      }
+
+      .skill-card, .software-item, .project-placeholder {
+        break-inside: avoid;
+      }
+
+      .career-panel {
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+      }
+
+      .career-panel .eyebrow,
+      .career-panel > p,
+      .career-column p,
+      .career-column h3 {
+        color: black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    Business Intelligence &amp; Data Analytics · Semester One · 2026
+  </div>
+
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Realeboga Mphelane home">RM<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle" type="button"
+        aria-expanded="false" aria-controls="navLinks">
+        Menu
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="individual-reflection.html">Individual Reflection</a>
+        <a href="group-reflection.html">Group Reflection</a>
+        <a href="skills-projects.html" aria-current="page">Skills &amp; Projects</a>
+        <a href="application-letter.html">Application Letter</a>
+        <a href="email-templates.html">Email Templates</a>
+        <a href="study-resources.html">Study Resources</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">05 / Skills &amp; Development</p>
+        <h1>Building skills.<br><span>Creating value.</span></h1>
+        <p class="hero-copy">
+          My developing skill set, academic strengths and professional interests
+          as a first-year Business Intelligence and Data Analytics student.
+          This page represents where I am today and the direction in which I
+          intend to grow.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <p class="eyebrow">My direction</p>
+        <h2>From learning to application.</h2>
+        <p>
+          Developing practical, communication and analytical skills to prepare
+          for opportunities in business and data-related work.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / Core strengths</p>
+          <h2>Skills I bring to the table.</h2>
+        </div>
+        <p>
+          A combination of practical computer skills, personal strengths and
+          abilities that I want to continue developing.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <span class="skill-index">01 — DIGITAL</span>
+          <h3>Microsoft Word</h3>
+          <p>
+            Preparing written documents, organising information and presenting
+            work in a clear, structured format.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-index">02 — DIGITAL</span>
+          <h3>Microsoft Excel</h3>
+          <p>
+            Developing spreadsheet skills for organising information and
+            learning how data can support business decisions.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-index">03 — DIGITAL</span>
+          <h3>Microsoft PowerPoint</h3>
+          <p>
+            Structuring presentation content and communicating ideas visually
+            to an audience.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-index">04 — PEOPLE</span>
+          <h3>Communication</h3>
+          <p>
+            Sharing ideas respectfully, listening to others and working towards
+            a clear understanding of tasks and expectations.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-index">05 — TEAMWORK</span>
+          <h3>Collaboration</h3>
+          <p>
+            Contributing to shared goals, respecting different perspectives and
+            taking responsibility for assigned work.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-index">06 — ORGANISATION</span>
+          <h3>Time Management</h3>
+          <p>
+            Planning my work, prioritising important tasks and making a
+            consistent effort to meet deadlines.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section software-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / Practical tools</p>
+          <h2>Technology for everyday work.</h2>
+        </div>
+        <p>
+          Tools that support document preparation, information organisation
+          and the presentation of ideas.
+        </p>
+      </div>
+
+      <div class="software-grid">
+        <article class="software-item">
+          <h3>Word</h3>
+          <p>
+            Written assignments, formal documents, reports and professional
+            correspondence.
+          </p>
+        </article>
+
+        <article class="software-item">
+          <h3>Excel</h3>
+          <p>
+            Tables, basic calculations, organised datasets and an introduction
+            to spreadsheet-based analysis.
+          </p>
+        </article>
+
+        <article class="software-item">
+          <h3>PowerPoint</h3>
+          <p>
+            Presentation slides, structured explanations and communicating
+            information to an audience.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section development">
+      <div class="development-intro">
+        <p class="eyebrow">03 / Personal qualities</p>
+        <h2>The mindset behind my skills.</h2>
+        <p>
+          I believe that professional development is not only about what I
+          already know. It is also about my attitude towards learning,
+          responsibility and improvement.
+        </p>
+      </div>
+
+      <div class="development-list">
+        <article class="development-item">
+          <span class="development-number">01</span>
+          <div>
+            <h3>Reliability</h3>
+            <p>
+              I aim to be dependable by taking my responsibilities seriously
+              and following through on the tasks assigned to me.
+            </p>
+          </div>
+        </article>
+
+        <article class="development-item">
+          <span class="development-number">02</span>
+          <div>
+            <h3>Willingness to learn</h3>
+            <p>
+              As a first-year student, I understand that I still have much to
+              learn. I am willing to ask questions, practise and use feedback
+              to improve.
+            </p>
+          </div>
+        </article>
+
+        <article class="development-item">
+          <span class="development-number">03</span>
+          <div>
+            <h3>Working with people</h3>
+            <p>
+              I value respectful relationships and understand that different
+              viewpoints can help a team consider better solutions.
+            </p>
+          </div>
+        </article>
+
+        <article class="development-item">
+          <span class="development-number">04</span>
+          <div>
+            <h3>Organisation</h3>
+            <p>
+              I want to maintain an organised approach to my studies, keep
+              track of important tasks and prepare my work carefully.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="projects-panel">
+        <p class="eyebrow">04 / Academic application</p>
+        <h2>Learning through practice.</h2>
+        <p>
+          I am at the beginning of my academic journey in Business Intelligence
+          and Data Analytics. I am building a foundation that I can use in
+          future assignments, practical exercises and professional projects.
+          Rather than presenting unfinished work as completed achievements,
+          I want this portfolio to reflect my current development honestly.
+        </p>
+
+        <div class="project-placeholder">
+          <div class="project-label">Current focus</div>
+          <div>
+            <h3>Developing my academic and digital foundation</h3>
+            <p>
+              My current focus is strengthening my computer skills,
+              communication, teamwork and understanding of business-related
+              concepts. As I complete practical assignments, I can add genuine
+              examples of my work, explain the tools I used and reflect on
+              what I learned.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-placeholder">
+          <div class="project-label">Next objective</div>
+          <div>
+            <h3>Build a portfolio of practical work</h3>
+            <p>
+              My goal is to develop examples that demonstrate how I organise
+              information, work with spreadsheets, communicate findings and
+              approach business problems. These examples can help show my
+              progress throughout my studies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="career-panel">
+      <p class="eyebrow">05 / Career direction</p>
+      <h2>Preparing for a future in business analysis.</h2>
+      <p>
+        My career interests are centred on business analysis and data analysis.
+        I want to understand how organisations use information to identify
+        problems, evaluate opportunities and make informed decisions.
+      </p>
+
+      <div class="career-columns">
+        <article class="career-column">
+          <h3>What I want to develop</h3>
+          <p>
+            Stronger Excel skills, analytical thinking, data interpretation,
+            professional writing, presentation skills and the ability to
+            explain information clearly.
+          </p>
+        </article>
+
+        <article class="career-column">
+          <h3>My long-term objective</h3>
+          <p>
+            Complete my studies, gain industrial attachment experience and
+            build a successful career in Botswana where I can contribute to
+            business improvement through useful information and analysis.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <nav class="page-navigation" aria-label="Portfolio page navigation">
+      <a href="group-reflection.html">Previous: Group Reflection</a>
+      <a href="application-letter.html">Next: Application Letter</a>
+    </nav>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>Realeboga Oduetse Mphelane</p>
+      <p>Business Intelligence &amp; Data Analytics · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? 'Close' : 'Menu';
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = 'Menu';
+      });
+    });
+  </script>
+</body>
+</html>
