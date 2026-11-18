@@ -1,0 +1,1378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f2ec">
+    <meta name="description" content="The personal academic and professional portfolio of Realeboga Oduetse Mphelane, a Business Intelligence and Data Analytics student at Botswana School of Business Sciences.">
+    <title>Realeboga Mphelane | Personal Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --paper: #f5f2ec;
+            --white: #fffefa;
+            --sand: #e6ded2;
+            --taupe: #b4a696;
+            --ink: #292925;
+            --muted: #77736b;
+            --line: #ded8ce;
+            --dark: #34332f;
+            --radius: 22px;
+            --page-width: 1220px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(var(--page-width), calc(100% - 64px));
+            margin-inline: auto;
+        }
+
+        .top-note {
+            background: var(--dark);
+            color: #f5f2ec;
+            padding: 9px 20px;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(245, 242, 236, 0.94);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(180, 166, 150, 0.3);
+        }
+
+        .nav {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .brand {
+            flex-shrink: 0;
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand span {
+            color: var(--taupe);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 600;
+            color: #625e57;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: #a18c76;
+        }
+
+        .nav-cta {
+            background: var(--dark);
+            color: var(--white) !important;
+            padding: 12px 17px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 8px 12px;
+            background: var(--white);
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 65px 0 76px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            align-items: center;
+            gap: clamp(36px, 6vw, 90px);
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--taupe);
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(47px, 6.5vw, 83px);
+            font-weight: 500;
+            line-height: 1.04;
+            letter-spacing: -5px;
+            margin: 26px 0 24px;
+        }
+
+        .hero h1 .surname {
+            display: block;
+            font-weight: 800;
+        }
+
+        .hero h1 .period {
+            color: var(--taupe);
+        }
+
+        .hero-description {
+            max-width: 470px;
+            color: #6d6962;
+            font-size: 15px;
+            line-height: 1.95;
+        }
+
+        .hero-description strong {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 31px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 49px;
+            padding: 13px 21px;
+            border: 1px solid var(--dark);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-primary {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--ink);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 38px;
+            padding-top: 22px;
+            border-top: 1px solid var(--line);
+        }
+
+        .meta-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .meta-item span {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .portrait-wrap {
+            position: relative;
+            padding: 0 0 28px 25px;
+        }
+
+        .portrait-frame {
+            position: relative;
+            min-height: 490px;
+            height: min(57vw, 630px);
+            max-height: 660px;
+            overflow: hidden;
+            background: #ded5c9;
+            border-radius: 48% 48% 7px 7px;
+        }
+
+        .portrait-frame::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 60%,
+                rgba(30, 29, 26, 0.22) 100%
+            );
+            pointer-events: none;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .portrait-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 490px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(145deg, #e8dfd3, #c8b9a6);
+            color: #62584d;
+        }
+
+        .portrait-placeholder strong {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 62px);
+            letter-spacing: -3px;
+            line-height: 1.05;
+        }
+
+        .portrait-placeholder span {
+            margin-top: 17px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .portrait-caption {
+            position: absolute;
+            z-index: 2;
+            right: -2px;
+            bottom: 48px;
+            padding: 15px 19px;
+            background: var(--white);
+            box-shadow: 0 12px 35px rgba(45, 39, 32, 0.09);
+        }
+
+        .portrait-caption small {
+            display: block;
+            color: var(--muted);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .portrait-caption strong {
+            display: block;
+            margin-top: 4px;
+            font-family: "Manrope", sans-serif;
+            font-size: 13px;
+        }
+
+        .image-index {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--muted);
+        }
+
+        .intro-strip {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 21px 0;
+        }
+
+        .strip-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .strip-label {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        .strip-item {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 105px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 43px;
+        }
+
+        .section-number {
+            color: var(--taupe);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            margin-top: 11px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(34px, 4.5vw, 54px);
+            font-weight: 600;
+            letter-spacing: -2.5px;
+            line-height: 1.15;
+        }
+
+        .section-note {
+            max-width: 340px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 25px;
+        }
+
+        .about-feature {
+            padding: 40px;
+            background: var(--dark);
+            color: var(--white);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 340px;
+        }
+
+        .feature-label {
+            color: #c8b8a5;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-feature h3 {
+            margin-top: 30px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(30px, 3.4vw, 43px);
+            font-weight: 500;
+            letter-spacing: -1.8px;
+            line-height: 1.25;
+        }
+
+        .about-feature p {
+            margin-top: 18px;
+            color: #d1cdc5;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .feature-bottom {
+            margin-top: 34px;
+            padding-top: 17px;
+            border-top: 1px solid #55534d;
+            color: #c9c1b5;
+            font-size: 10px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .detail-card {
+            padding: 27px;
+            border: 1px solid var(--line);
+            background: rgba(255, 254, 250, 0.65);
+            border-radius: 14px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(45, 39, 32, 0.05);
+        }
+
+        .detail-index {
+            color: var(--taupe);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .detail-card h3 {
+            margin: 21px 0 9px;
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+            letter-spacing: -0.5px;
+        }
+
+        .detail-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .detail-card a {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 11px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--taupe);
+            padding-bottom: 3px;
+        }
+
+        .statement {
+            background: #e9e2d8;
+        }
+
+        .statement-inner {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .statement-label {
+            color: #807467;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .statement h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(33px, 4.8vw, 57px);
+            line-height: 1.25;
+            letter-spacing: -2.7px;
+            font-weight: 500;
+        }
+
+        .statement h2 em {
+            color: #92816e;
+            font-style: normal;
+        }
+
+        .statement p {
+            max-width: 620px;
+            margin-top: 25px;
+            color: #686159;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .interest-card {
+            position: relative;
+            min-height: 220px;
+            padding: 29px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            transition: transform 0.25s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-card .interest-number {
+            color: var(--taupe);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .interest-card h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            letter-spacing: -1px;
+        }
+
+        .interest-card p {
+            margin-top: 9px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .career-panel {
+            padding: clamp(30px, 6vw, 70px);
+            background: #ded5c9;
+            border-radius: var(--radius);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .career-panel h2 {
+            margin-top: 17px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 4vw, 51px);
+            line-height: 1.2;
+            letter-spacing: -2px;
+            font-weight: 600;
+        }
+
+        .career-panel > div > p {
+            margin-top: 19px;
+            max-width: 480px;
+            color: #696157;
+            font-size: 13px;
+            line-height: 1.95;
+        }
+
+        .career-goals {
+            display: grid;
+            gap: 12px;
+        }
+
+        .goal {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px;
+            background: rgba(255, 254, 250, 0.72);
+            border-radius: 9px;
+        }
+
+        .goal-number {
+            font-size: 11px;
+            font-weight: 700;
+            color: #998570;
+        }
+
+        .goal strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .goal p {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .contact-section {
+            padding: 90px 0;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-section .eyebrow {
+            color: #c8c0b5;
+        }
+
+        .contact-section h2 {
+            margin-top: 20px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(39px, 5vw, 62px);
+            font-weight: 500;
+            letter-spacing: -3px;
+            line-height: 1.15;
+        }
+
+        .contact-section h2 span {
+            color: #c2b09b;
+        }
+
+        .contact-section .contact-intro {
+            margin-top: 20px;
+            max-width: 480px;
+            color: #c7c3bb;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 14px;
+        }
+
+        .contact-row {
+            padding: 19px 0;
+            border-bottom: 1px solid #55534d;
+        }
+
+        .contact-row small {
+            display: block;
+            color: #b6aa99;
+            font-size: 9px;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        .contact-row a,
+        .contact-row span {
+            display: inline-block;
+            margin-top: 7px;
+            font-size: 13px;
+            overflow-wrap: anywhere;
+        }
+
+        .footer {
+            padding: 25px 0;
+            background: #282824;
+            color: #c7c2b9;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 10px;
+        }
+
+        .footer a {
+            color: #f5f2ec;
+        }
+
+        .reveal {
+            animation: fadeUp 0.8s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        :focus-visible {
+            outline: 2px solid #9d8973;
+            outline-offset: 4px;
+        }
+
+        @media (min-width: 1400px) {
+            .hero {
+                padding-top: 80px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .nav-cta {
+                padding: 10px 12px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3.5px;
+            }
+
+            .portrait-frame,
+            .portrait-placeholder {
+                min-height: 430px;
+            }
+
+            .about-feature {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: min(100% - 36px, var(--page-width));
+            }
+
+            .top-note {
+                font-size: 8px;
+                letter-spacing: 1.4px;
+            }
+
+            .nav {
+                min-height: 70px;
+            }
+
+            .menu-toggle {
+                display: inline-block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 69px;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 20px 20px;
+                background: var(--paper);
+                border-bottom: 1px solid var(--line);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 8px;
+                font-size: 13px;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 8px;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 45px 0 52px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 12vw, 72px);
+                letter-spacing: -3.5px;
+                margin: 22px 0;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-meta {
+                gap: 20px;
+            }
+
+            .portrait-wrap {
+                width: 90%;
+                max-width: 440px;
+                margin-inline: auto;
+                padding-left: 17px;
+            }
+
+            .portrait-frame,
+            .portrait-placeholder {
+                min-height: 400px;
+                height: 112vw;
+                max-height: 570px;
+            }
+
+            .portrait-caption {
+                right: -10px;
+                bottom: 35px;
+            }
+
+            .strip-inner {
+                justify-content: flex-start;
+                gap: 13px 23px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 39px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-feature {
+                min-height: 310px;
+            }
+
+            .about-details {
+                gap: 12px;
+            }
+
+            .detail-card {
+                padding: 20px;
+            }
+
+            .detail-card h3 {
+                font-size: 15px;
+            }
+
+            .statement-inner {
+                grid-template-columns: 1fr;
+                gap: 23px;
+            }
+
+            .statement h2 {
+                font-size: 39px;
+                letter-spacing: -1.8px;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-card {
+                min-height: 175px;
+            }
+
+            .career-panel {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 28px 22px;
+            }
+
+            .career-panel h2 {
+                font-size: 38px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-section {
+                padding: 70px 0;
+            }
+
+            .contact-section h2 {
+                font-size: 44px;
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+
+            .about-details {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait-frame,
+            .portrait-placeholder {
+                min-height: 350px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-note">
+        Personal Portfolio · Business Intelligence &amp; Data Analytics · 2026
+    </div>
+
+    <header class="header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="index.html" class="brand" aria-label="Realeboga Mphelane home">
+                RM<span>.</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="navigation-links"
+            >
+                Menu
+            </button>
+
+            <ul class="nav-links" id="navigation-links">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="individual-reflection.html">Reflection</a></li>
+                <li><a href="group-reflection.html">Group Work</a></li>
+                <li><a href="skills-projects.html">Skills</a></li>
+                <li><a href="application-letter.html">Application</a></li>
+                <li><a href="email-templates.html">Emails</a></li>
+                <li><a href="study-resources.html">Resources</a></li>
+                <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Introducing Realeboga</p>
+
+                    <h1>
+                        Realeboga
+                        <span class="surname">Mphelane<span class="period">.</span></span>
+                    </h1>
+
+                    <p class="hero-description">
+                        A focused mind, a creative spirit and a future built on
+                        <strong>purpose, growth and ambition.</strong>
+                        I'm a first-year Business Intelligence and Data Analytics
+                        student developing the knowledge and skills to turn
+                        information into meaningful business decisions.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#about" class="button button-primary">
+                            Discover my story
+                        </a>
+                        <a href="cv.html" class="button button-secondary">
+                            Explore my CV
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <small>Programme</small>
+                            <span>BIDA</span>
+                        </div>
+                        <div class="meta-item">
+                            <small>Institution</small>
+                            <span>BSBS</span>
+                        </div>
+                        <div class="meta-item">
+                            <small>Academic year</small>
+                            <span>2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portrait-wrap reveal">
+                    <span class="image-index">A LITTLE ABOUT ME · 001</span>
+
+                    <div class="portrait-frame">
+                        <img
+                            src="images/realeboga.jpg"
+                            alt="Portrait of Realeboga Oduetse Mphelane"
+                            onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
+                        >
+
+                        <div class="portrait-placeholder" hidden>
+                            <strong>REAL<br>ME.</strong>
+                            <span>Your portrait goes here</span>
+                        </div>
+                    </div>
+
+                    <div class="portrait-caption">
+                        <small>Currently becoming</small>
+                        <strong>Who I'm meant to be.</strong>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="intro-strip">
+            <div class="container strip-inner">
+                <span class="strip-label">A few things about me</span>
+                <span class="strip-item">Business &amp; Analytics</span>
+                <span class="strip-item">Personal Growth</span>
+                <span class="strip-item">Creativity &amp; Music</span>
+                <span class="strip-item">Future Business Analyst</span>
+            </div>
+        </div>
+
+        <section class="section" id="about">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-number">01 / THE PERSON</p>
+                        <h2 class="section-title">More than a name.</h2>
+                    </div>
+                    <p class="section-note">
+                        Every ambition starts with understanding who you are,
+                        what matters to you and the person you want to become.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <article class="about-feature">
+                        <div>
+                            <span class="feature-label">My personal philosophy</span>
+                            <h3>Stay focused.<br>Keep growing.<br>Move with purpose.</h3>
+                            <p>
+                                I believe that progress comes from being willing
+                                to learn, putting in consistent effort and
+                                staying open to new experiences.
+                            </p>
+                        </div>
+                        <div class="feature-bottom">
+                            Built through learning, effort and experience
+                        </div>
+                    </article>
+
+                    <div class="about-details">
+                        <article class="detail-card">
+                            <span class="detail-index">01 — CHARACTER</span>
+                            <h3>Who I am</h3>
+                            <p>
+                                I consider myself focused, hardworking, friendly
+                                and determined to grow both personally and
+                                professionally.
+                            </p>
+                        </article>
+
+                        <article class="detail-card">
+                            <span class="detail-index">02 — EDUCATION</span>
+                            <h3>What I study</h3>
+                            <p>
+                                Business Intelligence and Data Analytics at
+                                Botswana School of Business Sciences, where
+                                I'm building my academic foundation.
+                            </p>
+                        </article>
+
+                        <article class="detail-card">
+                            <span class="detail-index">03 — INTEREST</span>
+                            <h3>What drives me</h3>
+                            <p>
+                                I'm interested in business, management,
+                                analytical thinking and practical skills that
+                                can prepare me for the workplace.
+                            </p>
+                        </article>
+
+                        <article class="detail-card">
+                            <span class="detail-index">04 — THE FUTURE</span>
+                            <h3>Where I'm headed</h3>
+                            <p>
+                                My goal is to complete my studies, gain
+                                industrial attachment experience and build
+                                a successful career in Botswana.
+                            </p>
+                            <a href="#career">Explore my goals</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section statement" id="mindset">
+            <div class="container statement-inner">
+                <div>
+                    <span class="statement-label">The mindset</span>
+                </div>
+
+                <div>
+                    <h2>
+                        I'm not trying to know everything.
+                        I'm here to <em>learn, improve and become better.</em>
+                    </h2>
+                    <p>
+                        Starting my academic journey is an opportunity to
+                        discover what I'm capable of. I want to strengthen
+                        my abilities, learn from the people around me and
+                        develop the confidence to take on new challenges.
+                        For me, success is not only about reaching a goal;
+                        it's also about the discipline and growth that happen
+                        along the way.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="interests">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-number">02 / OUTSIDE THE CLASSROOM</p>
+                        <h2 class="section-title">My kind of balance.</h2>
+                    </div>
+                    <p class="section-note">
+                        Academic growth matters, but so does making time for
+                        the things that keep life interesting.
+                    </p>
+                </div>
+
+                <div class="interests-grid">
+                    <article class="interest-card">
+                        <span class="interest-number">INTEREST 01</span>
+                        <div>
+                            <h3>Reading</h3>
+                            <p>
+                                Making time to learn, explore new ideas and
+                                develop a broader perspective.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="interest-card">
+                        <span class="interest-number">INTEREST 02</span>
+                        <div>
+                            <h3>Music</h3>
+                            <p>
+                                Enjoying the sounds and rhythms that bring
+                                energy, inspiration and balance to everyday life.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="interest-card">
+                        <span class="interest-number">INTEREST 03</span>
+                        <div>
+                            <h3>Football</h3>
+                            <p>
+                                Appreciating the game, the competition and the
+                                teamwork that make football exciting.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="career">
+            <div class="container">
+                <div class="career-panel">
+                    <div>
+                        <p class="eyebrow">Looking ahead</p>
+                        <h2>Building a future with direction.</h2>
+                        <p>
+                            My long-term ambition is to establish myself
+                            professionally in Botswana. As I continue my
+                            studies, I want to connect classroom learning
+                            with real workplace experience and develop the
+                            skills needed to contribute meaningfully to
+                            business decisions.
+                        </p>
+                    </div>
+
+                    <div class="career-goals">
+                        <article class="goal">
+                            <span class="goal-number">01</span>
+                            <div>
+                                <strong>Complete my studies</strong>
+                                <p>Build a solid foundation in business intelligence and data analytics.</p>
+                            </div>
+                        </article>
+
+                        <article class="goal">
+                            <span class="goal-number">02</span>
+                            <div>
+                                <strong>Gain practical experience</strong>
+                                <p>Work towards an industrial attachment and apply my developing skills.</p>
+                            </div>
+                        </article>
+
+                        <article class="goal">
+                            <span class="goal-number">03</span>
+                            <div>
+                                <strong>Grow into my career</strong>
+                                <p>Prepare for opportunities in business analysis and data analysis.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container contact-grid">
+                <div>
+                    <p class="eyebrow">The conversation starts here</p>
+                    <h2>Let's connect.<br><span>Let's grow.</span></h2>
+                    <p class="contact-intro">
+                        I'm building my academic and professional foundation
+                        and welcome opportunities to learn, collaborate and
+                        connect with people in the business and analytics field.
+                    </p>
+                </div>
+
+                <div class="contact-details">
+                    <div class="contact-row">
+                        <small>Professional email</small>
+                        <a href="mailto:bs-bida26-077@thuto.bac.ac.bw">
+                            bs-bida26-077@thuto.bac.ac.bw
+                        </a>
+                    </div>
+
+                    <div class="contact-row">
+                        <small>Alternative email</small>
+                        <a href="mailto:lameekmphelane@gmail.com">
+                            lameekmphelane@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="contact-row">
+                        <small>Phone</small>
+                        <a href="tel:75125205">75125205</a>
+                    </div>
+
+                    <div class="contact-row">
+                        <small>Academic institution</small>
+                        <span>Botswana School of Business Sciences</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>© 2026 Realeboga Oduetse Mphelane</span>
+            <span>Designed with purpose. Built for growth.</span>
+            <a href="#home">Back to top</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector(".nav-links");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = navigation.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.textContent = isOpen ? "Close" : "Menu";
+        });
+
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.textContent = "Menu";
+            });
+        });
+    </script>
+
+</body>
+</html>
